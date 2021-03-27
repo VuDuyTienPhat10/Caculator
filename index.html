@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+</head>
+
+<body>
+    <input type="number" placeholder="Nhập R" id="R">
+    <input type="number" placeholder="nhập % stoploss" id="percent">
+
+    <button onclick="showResult()">Tính</button>
+    <h1>Số tiền dùng để mua coin là:</h1>
+    <h1 style="color: red;" id="result"></h1>
+</body>
+
+<script>
+    document.onkeyup=function(e){
+        if(e.keyCode==13){
+            showResult()
+        }
+    }
+    function showResult() {
+        const r = document.getElementById('R').value;
+        const phantram = document.getElementById('percent').value;
+
+        //ta có result*phantram/100 = R
+        //=> result = R*100/phantramm
+        const result = (r * 100) / phantram;
+        document.getElementById('result').innerHTML = result
+    }
+
+
+</script>
+
+</html>
